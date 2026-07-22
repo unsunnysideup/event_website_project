@@ -1,64 +1,278 @@
-html, body{
-  height: 100%;
-  width: 60%;
-  place-self: center;
+
+@font-face {
+  font-family: 'Pixelify Sans';
+  src: url('Pixelify_Sans/PixelifySans-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 400 700; 
+  font-display: swap;
 }
 
-.hero {
+html, body{
+    font-family: "Pixelify Sans", sans-serif;
+    height: 110%;
     width: 100%;
-    height: 60%;
-    background-image: url(images/image.png);
-    display: grid;
-    place-content: center;
-    padding: 0
-
+    place-self: center;
+    background-color: #06414500;
+    scroll-behavior: smooth;
     
+}
+
+body::-webkit-scrollbar{
+    display:none
 }
 
 nav ul {
   list-style-type: none;
+  top: 30px;
   margin: 0;
   padding: 0;
-  background-color: #75A288;
   display: flex;
-  position: top;
-  top: 0;
+  position: absolute;
   width: 100%;
+  align-items: center;
 }
 
 ul li a {
-  display: block;
-  color: white;
-  padding: 20px 16px;
+  color: #4a3f56;
+  padding: 16px;
   text-decoration: none;
+  font-size: 20px;
+  font-weight: 400px;
 }
 
-body {
+.theme-toggle {
+    display: flex;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+#theme-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    font-family: "Pixelify Sans";
+    background-color: #4a3f56;
+   
+}
+
+#intro_header {
+    height: 80%;
+    width: 100%;
+    background-image: url(images/image.png);
+    background-size: cover;
+    place-content: center;
+    align-items: flex-start;
+}
+
+#heading_text{
+    margin-left: 15%;
+    margin-right: 15%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    background: #FFF;
+    mix-blend-mode: overlay;
+    color: #000;
+    font-family: "Pixelify Sans";
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 00;
+    font-size: 64px;
+    font-weight: 700;
+    backdrop-filter: blur(30px);
+
+}
+
+#caption{
+    color: #6D6484;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+    font-family: "Pixelify Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#arrow {
+    display: flex;
+    justify-content: center;
+}
+
+.section_titles{
+    color: #75A288;
+    font-family: "Pixelify Sans";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;   
+    text-align: center; 
+    margin: 20px;
+}
+
+#sec-1, #sec-2{
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     background-color: #064145;
 }
 
-.container .section-title {
-   text-align: center;
-   color: #75A288;
-   font-size: 128px;
+.events{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 100%; 
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
 }
 
-.container .section-text {
+.event_caption{
+    color: #96c0a8;
     text-align: center;
-    color: #F5F5F5;
-    font-size: 72px;
+    font-family: "Pixelify Sans";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
 }
 
-.container .faq_text {
-    text-align: center;
-    color: #F5F5F5;
-    font-size: 64px;
+.event-image{
+    width: 275px;
+    height: 275px;
+    object-fit: cover; 
+    border: 10px solid #D4CCBC;
+    display: block;
+    place-self: center;
 }
 
-.faq_question {
-    text-align: center;
-    color: #75A288;
-    font-size: 96px;
+.event {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
+
+#section_subheading, .form-label{
+    text-align: center;
+    padding-left: 15%;
+    padding-right: 15%;
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;   
+    text-align: center; 
+    margin: 10px;
+}
+
+form {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+input:not([type="checkbox"]){
+    padding: 12px;
+    width: 60%;
+    align-self: center;
+    margin: 10px;
+}
+
+.checkbox-row {
+    display:flex;
+    align-items: flex-start;
+    width: 30%;
+    gap: 8px;
+
+}
+
+#checkboxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;   
+    margin: 0 auto;       
+}
+
+label {
+    color: #96c0a8;
+}
+
+input[type="submit"]{
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    margin-top: 30px;
+    font-size: 18px;
+    font-family: "Pixelify Sans";
+    background-color: #37925e;
+
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(50, 121, 62);
+    
+}
+
+/* Dark mode styling */
+.dark-mode #intro_header{
+    background-image: url(images/dark_image.png);
+}
+
+.dark-mode, .dark-mode #sec-1, .dark-mode #sec-2{
+    background-color: #010C16;
+}
+
+.dark-mode #heading_text{
+    background: #1b1b1b;
+    mix-blend-mode: luminosity;
+    backdrop-filter: none;
+    color: #ffffff;
+    text-shadow: 0 4px 58px rgba(255, 255, 255, 0.60);
+
+}
+
+.dark-mode #caption {
+    color: #BECEFF;
+}
+
+.dark-mode .section_titles, .dark-mode label {
+    color: #BBB5FF;
+    text-shadow: 0 4px 58px rgba(255, 255, 255, 0.80);
+}
+
+.dark-mode input[type="submit"]{
+    color: #ffffff;
+    background-color: #594FC6;
+
+}
+
+.dark-mode input[type="submit"]:hover {
+    background-color: #293a75;
+}
+
+.dark-mode ul li a {
+    color: #d2d5f8;
+}
+
+.dark-mode .event-image{
+    border: 10px solid #BBB5FF;
+
+}
+
+.dark-mode .event_caption{
+    color: #ffffff;
+}
+
+
 
 
