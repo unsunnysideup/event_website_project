@@ -13,7 +13,6 @@ html, body{
     place-self: center;
     background-color: #06414500;
     scroll-behavior: smooth;
-    
 }
 
 body::-webkit-scrollbar{
@@ -272,6 +271,14 @@ input[type="submit"]:hover {
     
 }
 
+.error {
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(254, 96, 96);
+  background-color: rgb(251, 188, 188);
+
+}
+
 
 
 /* Dark mode styling */
@@ -292,7 +299,7 @@ input[type="submit"]:hover {
 
 }
 
-.dark-mode #caption, .dark-mode label {
+.dark-mode #caption, .dark-mode label, .dark-mode #id-count {
     color: #BECEFF;
 }
 
@@ -327,13 +334,7 @@ input[type="submit"]:hover {
     background-color: #BBB5FF;
 }
 
-.error {
-  border-style: solid;
-  border-width: 2px;
-  border-color: rgb(254, 96, 96);
-  background-color: rgb(251, 188, 188);
 
-  /* Set border-color and background */
-}
+
 
 
