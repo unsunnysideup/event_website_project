@@ -86,10 +86,10 @@
         </div>
         <div id="form">
             <form action="/submit" method="post" id="rsvp-form">
-                <input type="text" name="first-name" placeholder="Your first name" id="first-name">
-                <input type="text" name="last-name" placeholder="Your last name" id="last-name">
-                <input type="email" name="email_address" placeholder="Your email address">
-                <input type="text" name="phone" placeholder="Your phone number">
+                <input type="text" name="first-name" placeholder="Your first name" id="first-name" required>
+                <input type="text" name="last-name" placeholder="Your last name" id="last-name" required>
+                <input type="email" name="email_address" placeholder="Your email address" required>
+                <input type="text" name="phone" placeholder="Your phone number" required>
 
                 <p class="form-label">Date of Birth: </p>
                 <input type="date" id="Test_DatetimeLocal" min="1930-01-01" max="2026-12-31" step="1">
