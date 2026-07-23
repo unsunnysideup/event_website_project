@@ -61,7 +61,7 @@ ul li a {
 #intro_header {
     height: 80%;
     width: 100%;
-    background-image: url(images/image.png);
+    background-image: url(images/light_image.png);
     background-size: cover;
     place-content: center;
     align-items: flex-start;
@@ -158,7 +158,7 @@ ul li a {
     flex-direction: column;
 }
 
-#section_subheading, .form-label{
+.form-label{
     text-align: center;
     padding-left: 15%;
     padding-right: 15%;
@@ -168,6 +168,44 @@ ul li a {
     line-height: normal;   
     text-align: center; 
     margin: 10px;
+}
+
+.rsvp-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left:15%;
+    margin-right: 15%;
+}
+
+.rsvp-text {
+    align-items: center;
+    display: flex;
+    color: white;
+    flex-wrap: nowrap;
+    font-style: normal;
+    font-weight: 400;
+    flex-direction: column;
+    list-style: None;
+    flex: 1;
+    height: 175px;
+}
+
+#rsvp-list {
+    overflow-y: auto;
+}
+
+.rsvpee {
+    margin-top: 10px;
+    flex-wrap: nowrap;
+    text-align: left;
+}
+
+#id-count {
+    color: #96c0a8;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
 }
 
 form {
@@ -206,7 +244,15 @@ label {
     color: #96c0a8;
 }
 
-input[type="submit"]{
+#form {
+    flex-direction: column;
+    display: flex;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -222,6 +268,8 @@ input[type="submit"]:hover {
     background-color: rgb(50, 121, 62);
     
 }
+
+
 
 /* Dark mode styling */
 .dark-mode #intro_header{
@@ -241,18 +289,18 @@ input[type="submit"]:hover {
 
 }
 
-.dark-mode #caption {
+.dark-mode #caption, .dark-mode label {
     color: #BECEFF;
 }
 
-.dark-mode .section_titles, .dark-mode label {
-    color: #BBB5FF;
+.dark-mode .section_titles {
+    color: #675ed4;
     text-shadow: 0 4px 58px rgba(255, 255, 255, 0.80);
 }
 
-.dark-mode input[type="submit"]{
+.dark-mode input[type="submit"] {
     color: #ffffff;
-    background-color: #594FC6;
+    background-color: #665be5;
 
 }
 
@@ -266,13 +314,23 @@ input[type="submit"]:hover {
 
 .dark-mode .event-image{
     border: 10px solid #BBB5FF;
-
 }
 
 .dark-mode .event_caption{
     color: #ffffff;
 }
 
+.dark-mode #theme-button {
+    background-color: #BBB5FF;
+}
 
+.error {
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(254, 96, 96);
+  background-color: rgb(251, 188, 188);
+
+  /* Set border-color and background */
+}
 
 

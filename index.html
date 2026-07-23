@@ -11,24 +11,25 @@
 <body>
     <div id="intro_header">
         <nav>
-            <ul class = "links">
-            <li><a href="#sec-1">Events</a></li>
-            <li><a href="#sec-2">Registration</a></li>
-            <li><a href="#sec-3">FAQ</a></li>
-            <li class="theme-toggle"><button id = "theme-button" type="button">Toggle Dark Mode</button></li>
+            <ul class="links">
+                <li><a href="#sec-1">Events</a></li>
+                <li><a href="#sec-2">Registration</a></li>
+                <li><a href="#sec-3">FAQ</a></li>
+                <li class="theme-toggle"><button id="theme-button" type="button">Toggle Dark Mode</button></li>
             </ul>
-        <nav>
-        <div id="heading_text">
-            <h1 id="title">2026 Pixel Fair </h1>
-        </div>
-        <p id="caption">come join our annual fair on August 20th to celebrate pixel culture through art, music, tech,
-            and food!</p>
-        <a href="#sec-1" id="arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="100" viewBox="0 0 100 100" fill="none">
-                <path d="M50 64.1666L25 39.1666L30.8333 33.3333L50 52.5L69.1667 33.3333L75 39.1666L50 64.1666Z"
-                    fill="white" />
-            </svg>
-        </a>
+            <nav>
+                <div id="heading_text">
+                    <h1 id="title">2026 Pixel Fair </h1>
+                </div>
+                <p id="caption">come join our annual fair on August 20th to celebrate pixel culture through art, music,
+                    tech,
+                    and food!</p>
+                <a href="#sec-1" id="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="70" height="100" viewBox="0 0 100 100" fill="none">
+                        <path d="M50 64.1666L25 39.1666L30.8333 33.3333L50 52.5L69.1667 33.3333L75 39.1666L50 64.1666Z"
+                            fill="white" />
+                    </svg>
+                </a>
     </div>
     <section id="sec-1">
         <h2 class="section_titles">
@@ -47,7 +48,7 @@
                 <img src="images/sprite_event.jpg" alt="Sprite Design Contest" class="event-image">
                 <p class="event_caption">Sprite Design Jam </p>
             </div>
-        
+
         </div>
         <br>
         <div class="events">
@@ -66,30 +67,41 @@
     </section>
 
     <section id="sec-2">
-            <h2 class="section_titles">
-                Registration
-            </h2>
-            <h3 id="section_subheading">
-                book limited tickets to access all events from music production to
-                design contests and artist panels. half-price discounts on all food and drinks.
-            </h3>
-            <div id="form">
-                <form action="/submit" method="post">
-                    <input type="text" name="name" placeholder="Your name">
-                    <input type="email" name="email_address" placeholder="Your email address">
-                    <input type="text" name="phone" placeholder="Your phone number">
-                    
-                    <p class="form-label">Date Of Birth: </p>
-                    <input type="date" id="Test_DatetimeLocal" min="1930-01-01" max="2026-12-31" step="1">
-                 
-                    <div id="checkboxes">
+        <h2 class="section_titles">
+            RSVP
+        </h2>
+        <div class="rsvp-section">
+            <p class="rsvp-text">
+                Grab your tickets and get access to everything... from lively music production sessions to cool design jams and developer showcases. Everyone's welcome, so bring your friends and family for a day full of fun and discovery!
+            </p>
+            <div class="rsvp-text" id="rsvp-list">
+                <p class="rsvpee"> ✌︎㋡ Joanna Smith has RSVPed! </p>
+                <p class="rsvpee"> ✌︎㋡ Marcus Hobbs has RSVPed! </p>
+                <p class="rsvpee"> ✌︎㋡ Patrick Chen has RSVPed! </p>
+            </div>
+        </div>
+        <div id="counter"></div>
+        <p id="id-count">3 people has signed up! <br>
+            Come join the fun by filling out the form below ~  </p>
+        </div>
+        <div id="form">
+            <form action="/submit" method="post" id="rsvp-form">
+                <input type="text" name="first-name" placeholder="Your first name" id="first-name">
+                <input type="text" name="last-name" placeholder="Your last name" id="last-name">
+                <input type="email" name="email_address" placeholder="Your email address">
+                <input type="text" name="phone" placeholder="Your phone number">
+
+                <p class="form-label">Date of Birth: </p>
+                <input type="date" id="Test_DatetimeLocal" min="1930-01-01" max="2026-12-31" step="1">
+
+                <div id="checkboxes">
                     <p class="form-label">Events for Registration</p>
 
                     <div class="checkbox-row">
                         <input type="checkbox" id="option1" name="checkboxGroup" value="option1" />
                         <label for="option1">DIY 8-bit Melody Workshop</label>
                     </div>
-                
+
                     <div class="checkbox-row">
                         <input type="checkbox" id="option2" name="checkboxGroup" value="option2" />
                         <label for="option2">Pixel Art Gallery </label>
@@ -104,7 +116,7 @@
                         <input type="checkbox" id="option4" name="checkboxGroup" value="option1" />
                         <label for="option4">Indie Pixel Game Showcase</label>
                     </div>
-                
+
                     <div class="checkbox-row">
                         <input type="checkbox" id="option5" name="checkboxGroup" value="option2" />
                         <label for="option5">8-bit Music Bash</label>
@@ -115,17 +127,19 @@
                         <label for="option6">Retro Night Market</label>
                     </div>
 
-                    <p class="form-label">By selecting this checkbox, I agree to Pixel Fair's terms and conditions agreement
+                    <p class="form-label">By selecting this checkbox, I agree to Pixel Fair's terms and conditions
+                        agreement
                         and acknowledge and have read the policy</p>
 
                     <div class="checkbox-row">
                         <input type="checkbox" name="terms" required>
                         <label for="terms">I agree to the terms</label>
                     </div>
-                    </div>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
+                    <input type="submit" value="Submit" id="rsvpSubmit">
+                </div>
+            </form>
+               
+        </div>
     </section>
     <script src="index.js"></script>
 </body>
