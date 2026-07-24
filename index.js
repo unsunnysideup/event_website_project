@@ -162,7 +162,7 @@ function animateImage() {
 
 let intervalId = setInterval(animateImage, 500);
 setTimeout(() => {
-   document.getElementById("success-modal").style.display = 'none';
+   modal.getElementById("success-modal").style.display = 'none';
    clearInterval(intervalId);
 }, 5000);
 
