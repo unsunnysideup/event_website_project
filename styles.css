@@ -378,7 +378,7 @@ input[type="submit"]:hover {
 
 /* modal */
 .modal {
-  display: flex;   /* modal should be hidden by default*/
+  display: none;   /* modal should be hidden by default*/
   position: fixed; /* modal cannot move around the screen */
   z-index: 2;      /* modal appears above other elements */ 
   
@@ -419,8 +419,8 @@ input[type="submit"]:hover {
 }
 
 #modal-text{
-    padding-top: 10%;
     display: flex;
+    color: #064145;
 }
 
 #leaveModal{
