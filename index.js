@@ -1,7 +1,3 @@
-window.addEventListener("load", () => {
-document.getElementById("intro_header").scrollIntoView()
-});
-
 document.getElementById("theme-button").addEventListener("click", () => {
    toggleDarkMode();
    buttonChange();
