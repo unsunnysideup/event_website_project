@@ -9,13 +9,16 @@
 </head>
 
 <body>
-    <div id="intro_header">
+    <div id="intro_header" class="revealable">
         <nav>
             <ul class="links">
                 <li><a href="#sec-1">Events</a></li>
                 <li><a href="#sec-2">RSVP</a></li>
                 <li><a href="#sec-3">FAQ</a></li>
-                <li class="theme-toggle"><button id="theme-button" type="button">Toggle Dark Mode</button></li>
+                <div id="theme-buttons">
+                    <li><button id="theme-button" type="button">Toggle Dark Mode</button></li>
+                    <li><button id="motion-button" type="button">Reduce Motion Off</button></li>
+                </div>
             </ul>
             <nav>
                 <div id="heading_text">
@@ -32,10 +35,12 @@
                 </a>
     </div>
     <section id="sec-1">
-        <h2 class="section_titles">
-            special events
-        </h2>
-        <div class="events">
+        <div class="revealable">
+            <h2 class="section_titles">
+                special events
+            </h2>
+        </div>
+        <div class="events revealable">
             <div id="event">
                 <img src="images/music_event.jpg" alt="8-bit Music Production Workshop" class="event-image">
                 <p class="event_caption">DIY 8-bit Melody Workshop </p>
@@ -51,7 +56,7 @@
 
         </div>
         <br>
-        <div class="events">
+        <div class="events revealable">
             <div id="event">
                 <img src="images/game_exhibit.jpg" alt="8-bit Music Production Workshop" class="event-image">
                 <p class="event_caption">Indie Pixel Game Showcase </p>
@@ -67,24 +72,28 @@
     </section>
 
     <section id="sec-2">
-        <h2 class="section_titles">
-            RSVP
-        </h2>
-        <div class="rsvp-section">
-            <p class="rsvp-text">
-                Grab your tickets and get access to everything... from lively music production sessions to cool design jams and developer showcases. Everyone's welcome, so bring your friends and family for a day full of fun and discovery!
-            </p>
-            <div class="rsvp-text" id="rsvp-list">
-                <p class="rsvpee"> ✌︎㋡ Joanna Smith has RSVPed! </p>
-                <p class="rsvpee"> ✌︎㋡ Marcus Hobbs has RSVPed! </p>
-                <p class="rsvpee"> ✌︎㋡ Patrick Chen has RSVPed! </p>
+        <div class="revealable">
+            <h2 class="section_titles">
+                RSVP
+            </h2>
+            <div class="rsvp-section">
+                <p class="rsvp-text">
+                    Grab your tickets and get access to everything... from lively music production sessions to cool
+                    design jams and developer showcases. Everyone's welcome, so bring your friends and family for a day
+                    full of fun and discovery!
+                </p>
+                <div class="rsvp-text" id="rsvp-list">
+                    <p class="rsvpee"> ✌︎㋡ Joanna Smith has RSVPed! </p>
+                    <p class="rsvpee"> ✌︎㋡ Marcus Hobbs has RSVPed! </p>
+                    <p class="rsvpee"> ✌︎㋡ Patrick Chen has RSVPed! </p>
+                </div>
             </div>
         </div>
-        <div id="counter"></div>
-        <p id="id-count">3 people has signed up! <br>
-            Come join the fun by filling out the form below ~  </p>
+        <div id="counter" class="revealable">
+            <p id="id-count">3 people has signed up! <br>
+                Come join the fun by filling out the form below ~ </p>
         </div>
-        <div id="form">
+        <div id="form" class="revealable">
             <form action="/submit" method="post" id="rsvp-form">
                 <input type="text" name="first-name" placeholder="Your first name" id="first-name" required>
                 <input type="text" name="last-name" placeholder="Your last name" id="last-name" required>
@@ -138,9 +147,24 @@
                     <input type="submit" value="Submit" id="rsvpSubmit">
                 </div>
             </form>
-               
+
         </div>
     </section>
+
+    <div id="success-modal" class="modal">
+        <div class="modal-container">
+            <div class="modal-item">
+                <p id="modal-text">You have been registered for 2026 Pixel Fair! </p>
+            </div>
+            <div class="modal-item">
+                <img src="images/welcome.gif">
+            </div>
+            <div class="modal-item">
+                <button type="button" id="leaveModal">x</button>
+            </div>
+        </div>
+    </div>
+
     <script src="index.js"></script>
 </body>
 

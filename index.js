@@ -15,15 +15,9 @@ function buttonChange() {
 }
 
 let count = 3;
-document.getElementById("rsvp-form").addEventListener("submit", (event)=> {
-   event.preventDefault();
-   if (validateForm()) {
-   addParticipation(event);
-}});
+document.getElementById("rsvp-form").addEventListener("submit", validateForm);
 
-function addParticipation(event) {
-   let first_name = document.getElementById("first-name").value;
-   let last_name = document.getElementById("last-name").value;
+function addParticipation(person) {
    let counter = document.getElementById("id-count");
 
    if (counter) {
@@ -34,7 +28,7 @@ function addParticipation(event) {
    counter = document.createElement("p");
    count = count + 1;
    counter.id = "id-count";
-   participant.textContent = `✌︎㋡ ${first_name} ${last_name} has RSVPed!`;
+   participant.textContent = `✌︎㋡ ${person.first_name} ${person.last_name} has RSVPed!`;
    counter.innerHTML= `${count} people has signed up! <br>
             Come join the fun by filling out the form below ~ `
    document.getElementById("rsvp-list").appendChild(participant);
@@ -45,9 +39,14 @@ function addParticipation(event) {
 }
 
 function validateForm() {
+   event.preventDefault()
 
    var isValid = true;
    var rsvpInputs = document.getElementById("rsvp-form").elements;
+   let person = {
+      first_name: rsvpInputs[0].value,
+      last_name: rsvpInputs[1].value
+   };
    
    for (let i = 0; i < 3; i++) {
       if (rsvpInputs[i].value.length < 2) {
@@ -55,7 +54,7 @@ function validateForm() {
          isValid = false;
       } else {
          rsvpInputs[i].classList.remove('error');
-      };
+      }
 
    };
 
@@ -64,7 +63,7 @@ function validateForm() {
       emailInput.classList.add('error');
       isValid = false;
    } else {
-      emailInput.classList.remove('error')
+      emailInput.classList.remove('error');
    }
 
    let phoneInput = rsvpInputs[3];
@@ -72,9 +71,72 @@ function validateForm() {
       phoneInput.classList.add('error');
       isValid = false;
    } else {
-      phoneInput.classList.remove('error')
+      phoneInput.classList.remove('error');
    }
 
-   return isValid
+   if (isValid) addParticipation(person)
 
 }
+
+// Step 1: Select all elements with the class 'revealable'.
+let revealableContainers = document.querySelectorAll('.revealable');
+
+// Step 2: Write function to reveal elements when they are in view.
+const reveal = () => {
+    for (let i = 0; i < revealableContainers.length; i++) {
+        let current = revealableContainers[i];
+
+        // Get current height of container and window
+        let windowHeight = window.innerHeight;
+        let topOfRevealableContainer = revealableContainers[i].getBoundingClientRect().top;
+        let revealDistance = parseInt(getComputedStyle(current).getPropertyValue('--reveal-distance'), 10);
+
+        // If the container is within range, add the 'active' class to reveal
+        if (topOfRevealableContainer < windowHeight - revealDistance) {
+            revealableContainers[i].classList.add('active');
+        }
+        // If the container is not within range, hide it by removing the 'active' class
+        else { 
+            revealableContainers[i].classList.remove('active');
+        }
+    }
+}
+
+// Step 3: Whenever the user scrolls, check if any containers should be revealed
+window.addEventListener('scroll', reveal);
+
+document.getElementById('motion-button').addEventListener('click', reduceMotion);
+
+function reduceMotion() {
+   let motionButton = document.getElementById("motion-button");
+
+   if (motionButton.textContent=="Reduce Motion Off") {
+      for (let i = 0; i < revealableContainers.length; i++) {
+      revealableContainers[i].classList.add('reduceMotion');
+      }
+
+      motionButton.textContent = "Reduce Motion On";
+   } else {
+      for (let i = 0; i < revealableContainers.length; i++) {
+         revealableContainers[i].classList.remove('reduceMotion')
+      }
+
+      motionButton.textContent = "Reduce Motion Off";
+   }
+}
+
+// modal animations
+const toggleModal = (person) => {
+    let modal = 0; // TODO
+    
+    // TODO: Update modal display to flex
+    
+
+    // TODO: Update modal text to personalized message
+
+
+    // Set modal timeout to 5 seconds
+    
+}
+
+// TODO: animation variables and animateImage() function

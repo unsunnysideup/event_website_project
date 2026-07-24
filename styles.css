@@ -38,12 +38,6 @@ ul li a {
   font-weight: 400px;
 }
 
-.theme-toggle {
-    display: flex;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: 20px;
-}
 
 #theme-button {
     padding: 10px;
@@ -55,6 +49,27 @@ ul li a {
     font-family: "Pixelify Sans";
     background-color: #4a3f56;
    
+}
+
+#motion-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    font-family: "Pixelify Sans";
+    background-color: #064145;
+   
+}
+
+#theme-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+    gap: 15px;
 }
 
 #intro_header {
@@ -190,7 +205,7 @@ ul li a {
     flex-direction: column;
     list-style: None;
     flex: 1;
-    height: 175px;
+    height: 160px;
 }
 
 #rsvp-list {
@@ -255,6 +270,7 @@ input[type="submit"] {
     padding: 10px;
     margin-left: 20%;
     margin-right: 20%;
+    margin-bottom: 10%;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -334,7 +350,90 @@ input[type="submit"]:hover {
     background-color: #BBB5FF;
 }
 
+.dark-mode #animation-button {
+    background-color: #96c0a8;
+}
 
+/* animations */
+.revealable {
+  --reveal-distance: 150px; /* CSS Variable */
+  scroll-margin-top: var(--reveal-distance);
+  opacity: 0%;
+  transition: all 2s ease;
+  position: relative;
+  transform: translateY(var(--reveal-distance));
+}
 
+.active {
+  scroll-margin-top: 0;
+  transform: translateY(0);
+  opacity: 100%;
+}
 
+.reduceMotion {
+    opacity: 100%;
+    transition: None;
+    transform: None;
+}
 
+/* modal */
+.modal {
+  display: flex;   /* modal should be hidden by default*/
+  position: fixed; /* modal cannot move around the screen */
+  z-index: 2;      /* modal appears above other elements */ 
+  
+  /* TODO: Make the modal fill the entire screen */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Add a semi-transparent background to shadow non-modal elements*/
+  background-color: rgba(0,0,0,0.4); /* 40% opacity black */
+
+  /* Flexbox settings for modal */
+  /* These won't apply until we update "display:" from "hidden" to "flex" in our JS */
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container {
+    /* Change modal size and spacing here */
+    position: relative;
+    padding: 50px;
+    width: 35%;
+    border-radius: 20px;
+
+    /* Customize modal style here */
+    background-image: url(images/modal.jpg);
+    background-size: cover;
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+    font-family: "Pixelify Sans";
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    justify-content: space-between;
+}
+
+#modal-text{
+    padding-top: 10%;
+    display: flex;
+}
+
+#leaveModal{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    font-family: "Pixelify Sans";
+    background-color: #ce6a6a;
+
+}
