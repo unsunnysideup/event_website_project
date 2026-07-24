@@ -342,7 +342,7 @@ input[type="submit"]:hover {
     border: 10px solid #BBB5FF;
 }
 
-.dark-mode .event_caption{
+.dark-mode .event_caption, .dark-mode #modal-text{
     color: #ffffff;
 }
 
@@ -352,6 +352,10 @@ input[type="submit"]:hover {
 
 .dark-mode #animation-button {
     background-color: #96c0a8;
+}
+
+.dark-mode .modal-container{
+    background-image: url("images/dark_modal.jpg");
 }
 
 /* animations */
